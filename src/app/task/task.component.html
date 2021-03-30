@@ -1,0 +1,13 @@
+<mat-card class="item" (dblclick)="edit.emit(task)">
+    <h2>{{ task.title}}</h2>
+    <img *ngIf="task.type == 'image'" width="100px" [src]="task.description">
+    <audio controls *ngIf="task.type == 'audio'">
+        <source [src]="task.description" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <video width="320" height="240" controls  *ngIf="task.type == 'video'">
+        <source [src]="task.description" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button mat-raised-button color="primary" *ngIf="task.type == 'doc'" (click)="goto(task.description)">Open Document</button>
+</mat-card>

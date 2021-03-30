@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+  <mat-icon>local_fire_department</mat-icon>
+  <span>Multimedia Database Application</span>
+</mat-toolbar>
+
+<div class="content-wrapper">
+  <div class="container-wrapper">
+    <div class="container">
+      <h2>Image File</h2>
+      <mat-card id="todo">
+        <button mat-button (click)="newImage()" color="primary">
+          <mat-icon>add</mat-icon> Add New
+        </button>
+        <app-task *ngFor="let task of todo | async" [task]="task" (edit)="edit('ImageFile', $event)"></app-task>
+      </mat-card>
+    </div>
+    <div class="container">
+      <h2>Audio File</h2>
+      <mat-card id="audio">
+        <button mat-button (click)="newAudio()" color="primary">
+          <mat-icon>add</mat-icon> Add New
+        </button>
+        <app-task *ngFor="let task of audio | async" [task]="task" (edit)="edit('AudioFile', $event)"></app-task>
+      </mat-card>
+    </div>
+    <div class="container">
+      <h2>Video File</h2>
+      <mat-card id="video">
+        <button mat-button (click)="newVideo()" color="primary">
+          <mat-icon>add</mat-icon> Add New
+        </button>
+        <app-task *ngFor="let task of video | async" [task]="task" (edit)="edit('VideoFile', $event)"></app-task>
+      </mat-card>
+    </div>
+    <div class="container">
+      <h2>Doc File</h2>
+      <mat-card id="doc">
+        <button mat-button (click)="newDoc()" color="primary">
+          <mat-icon>add</mat-icon> Add New
+        </button>
+        <app-task *ngFor="let task of doc | async" [task]="task" (edit)="edit('DocFile', $event)"></app-task>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

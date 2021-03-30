@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "multimedia-database-project": {
+      "hosting": {
+        "MultimediaDatabaseApp": [
+          "multimedia-database-project"
+        ]
+      }
+    }
+  }
+}

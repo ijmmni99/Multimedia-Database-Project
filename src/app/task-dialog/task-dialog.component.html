@@ -1,0 +1,18 @@
+<mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput cdkFocusInitial [(ngModel)]="data.task.title">
+</mat-form-field>
+<br>
+<progress max="100" [value]="(uploadProgress | async)"></progress>
+<br>
+<button type="button" mat-stroked-button (click)="fileInput.click()">Choose File</button>
+<input hidden (change)="upload($event)"  #fileInput type="file" id="file">
+
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="{task: data.task}">OK</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button *ngIf="data.enableDelete" mat-mini-fab color="primary" aria-label="Delete" [mat-dialog-close]="{ task: data.task, delete: true }">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
